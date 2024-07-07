@@ -23,9 +23,10 @@ jobs:
       - name: Docker build and push
         run: |
           # Run commands to build and push Docker images
-          docker build -t swiggy-clone .
-          docker tag docker push anoop3/new_proj:latest
+          docker build -t new-clone .
+          docker tag   new-clone anoop3/new_proj:latest
           docker login -u ${{ secrets.Dockerhub_username }} -p ${{ secrets.Dockerhub_token }}
           docker push docker push anoop3/new_proj:latest
         env:
           DOCKER_CLI_ACI: 1
+        
